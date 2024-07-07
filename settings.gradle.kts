@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "RCCalculator"
 include(":app")
-include(":moudule-calculator")
+include(":module-calculator")
+include(":module-ui-xml")
