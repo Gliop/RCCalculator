@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:alignmentMode="alignMargins"
+    android:columnCount="4"
+    android:rowCount="5"
+    android:useDefaultMargins="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintDimensionRatio="4:5"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1"
+    app:layout_constraintWidth_percent="1">
+
+    <!-- AC Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:id="@+id/btn_ac"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/calculator_btn_ac"
+        android:theme="@style/FunctionButtonStyle" />
+
+    <!-- Plus/Minus Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        android:id="@+id/btn_plus_minus"
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:text="@string/calculator_btn_plus_minus"
+        android:theme="@style/FunctionButtonStyle" />
+
+    <!-- Percent Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        android:id="@+id/btn_percent"
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:background="@drawable/button_background_ripple"
+        android:text="@string/calculator_btn_percent"
+        android:theme="@style/FunctionButtonStyle" />
+
+    <!-- Divide Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_divide"
+        android:text="@string/calculator_btn_divide"
+        android:theme="@style/OperatorButtonStyle" />
+
+    <!-- Number Buttons (7, 8, 9) -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_7"
+        android:text="@string/calculator_btn_7"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_8"
+        android:text="@string/calculator_btn_8"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_9"
+        android:text="@string/calculator_btn_9"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_multiply"
+        android:text="@string/calculator_btn_multiply"
+        android:theme="@style/OperatorButtonStyle" />
+
+    <!-- Number Buttons (4, 5, 6) -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_4"
+        android:text="@string/calculator_btn_4"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_5"
+        android:text="@string/calculator_btn_5"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_6"
+        android:text="@string/calculator_btn_6"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_subtract"
+        android:text="@string/calculator_btn_subtract"
+        android:theme="@style/OperatorButtonStyle" />
+
+    <!-- Number Buttons (1, 2, 3) -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="3"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_1"
+        android:text="@string/calculator_btn_1"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="3"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_2"
+        android:text="@string/calculator_btn_2"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="3"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_3"
+        android:text="@string/calculator_btn_3"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="3"
+        android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_add"
+        android:text="@string/calculator_btn_add"
+        android:theme="@style/OperatorButtonStyle" />
+
+    <!-- Number Buttons (0) -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_0_type1"
+        android:text="@string/calculator_btn_0"
+        android:theme="@style/CalculatorButtonStyle"
+        android:visibility="gone" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_0_type2"
+        android:text="@string/calculator_btn_0"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_decimal_type2"
+        android:text="@string/calculator_btn_decimal"
+        android:theme="@style/CalculatorButtonStyle" />
+
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_decimal_type1"
+        android:text="@string/calculator_btn_decimal"
+        android:theme="@style/CalculatorButtonStyle"
+        android:visibility="gone" />
+
+    <!-- Delete Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_del"
+        android:text="@string/calculator_btn_del"
+        android:theme="@style/FunctionButtonStyle" />
+
+    <!-- Equals Button -->
+    <com.robertchou.module.ui.xml.AutoResizeButton
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:id="@+id/btn_equals"
+        android:text="@string/calculator_btn_equals"
+        android:theme="@style/OperatorButtonStyle" />
+
+</GridLayout>

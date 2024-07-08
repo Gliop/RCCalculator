@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="4dp">
+
+    <!-- HorizontalScrollView for displaying the current calculator input -->
+    <HorizontalScrollView
+        android:id="@+id/hl_calculator_current"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/hl_calculator_preview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="w,1:3"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_percent="1">
+
+        <com.robertchou.module.ui.xml.AutoResizeTextView
+            android:id="@+id/tv_calculator_current"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textIsSelectable="true"
+            android:ellipsize="none"
+            android:textColor="@android:color/white" />
+    </HorizontalScrollView>
+
+    <!-- HorizontalScrollView for displaying the calculator preview -->
+    <HorizontalScrollView
+        android:id="@+id/hl_calculator_preview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="w,1:6"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_percent="1">
+
+        <com.robertchou.module.ui.xml.AutoResizeButton
+            android:id="@+id/tv_calculator_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:textIsSelectable="true"
+            android:textColor="@android:color/white" />
+    </HorizontalScrollView>
+
+    <!-- Include layout for calculator panel with buttons -->
+    <include
+        layout="@layout/layout_calculator_panel"
+        android:id="@+id/gl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alignmentMode="alignMargins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_percent="1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

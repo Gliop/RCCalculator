@@ -1,0 +1,5 @@
+<!-- res/drawable/button_background_ripple.xml -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@android:color/white">
+    <item android:drawable="@drawable/button_background_selector"/>
+</ripple>

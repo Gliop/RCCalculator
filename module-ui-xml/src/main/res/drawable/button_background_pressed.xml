@@ -1,0 +1,9 @@
+<!-- res/drawable/button_background_pressed.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="?attr/buttonPressedStartColor"
+        android:centerColor="?attr/buttonPressedCenterColor"
+        android:endColor="?attr/buttonPressedEndColor"
+        android:angle="270"/>
+    <corners android:radius="8dp"/>
+</shape>

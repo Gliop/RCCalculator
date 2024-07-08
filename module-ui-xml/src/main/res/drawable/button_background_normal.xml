@@ -1,0 +1,9 @@
+<!-- res/drawable/button_background_normal.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="?attr/buttonNormalStartColor"
+        android:centerColor="?attr/buttonNormalCenterColor"
+        android:endColor="?attr/buttonNormalEndColor"
+        android:angle="270"/>
+    <corners android:radius="8dp"/>
+</shape>

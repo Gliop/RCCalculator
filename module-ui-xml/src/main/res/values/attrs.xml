@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomButton">
+        <attr name="buttonNormalStartColor" format="color" />
+        <attr name="buttonNormalCenterColor" format="color" />
+        <attr name="buttonNormalEndColor" format="color" />
+        <attr name="buttonPressedStartColor" format="color" />
+        <attr name="buttonPressedCenterColor" format="color" />
+        <attr name="buttonPressedEndColor" format="color" />
+    </declare-styleable>
+
+    <!-- Define a custom button style attribute -->
+    <attr name="customButtonStyle" format="reference" />
+</resources>
