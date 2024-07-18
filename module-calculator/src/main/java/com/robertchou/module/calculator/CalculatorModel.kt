@@ -1,15 +1,21 @@
 package com.robertchou.module.calculator
-
 import com.ezylang.evalex.Expression
 import java.math.BigDecimal
 import java.util.EmptyStackException
 import java.util.Stack
 
+/**
+ * Model class for a calculator. Handles input, operations, and display of the calculation process.
+ */
 class CalculatorModel {
 
 	private val stackCalculate = Stack<CalculatorItem>()
 
-	// Get the last display item as a string
+	/**
+	 * Gets the last display item as a string.
+	 *
+	 * @return The string representation of the last display item.
+	 */
 	fun getLastDisplay(): String {
 		return try {
 			convertToSignalString(stackCalculate.peek())
@@ -18,12 +24,20 @@ class CalculatorModel {
 		}
 	}
 
-	// Check if shift operation can be performed
+	/**
+	 * Checks if a shift operation can be performed.
+	 *
+	 * @return True if shift operation can be performed, false otherwise.
+	 */
 	fun isCanShift(): Boolean {
 		return isCalculateFinished() || (stackCalculate.size == 1 && stackCalculate.peek().value.isNumber())
 	}
 
-	// Check if input can be received
+	/**
+	 * Checks if input can be received.
+	 *
+	 * @return True if input can be received, false otherwise.
+	 */
 	fun isCanReceive(): Boolean {
 		return when {
 			stackCalculate.isEmpty() -> true
@@ -33,7 +47,12 @@ class CalculatorModel {
 		}
 	}
 
-	// Convert the calculator item to a signal string
+	/**
+	 * Converts the calculator item to a signal string.
+	 *
+	 * @param calculatorItem The calculator item to convert.
+	 * @return The string representation of the calculator item.
+	 */
 	private fun convertToSignalString(calculatorItem: CalculatorItem): String {
 		return if (calculatorItem.isNegative) {
 			"-${calculatorItem.value}"
@@ -42,7 +61,11 @@ class CalculatorModel {
 		}
 	}
 
-	// Get the last calculator item
+	/**
+	 * Gets the last calculator item.
+	 *
+	 * @return The last calculator item or null if the stack is empty.
+	 */
 	fun getLastCalculateItem(): CalculatorItem? {
 		return try {
 			stackCalculate.peek()
@@ -51,7 +74,11 @@ class CalculatorModel {
 		}
 	}
 
-	// Get the current calculation process as a string
+	/**
+	 * Gets the current calculation process as a string.
+	 *
+	 * @return The string representation of the current calculation process.
+	 */
 	fun getCalculateProcess(): String {
 		val stringBuffer = StringBuffer()
 		stackCalculate.forEach {
@@ -63,7 +90,12 @@ class CalculatorModel {
 		return stringBuffer.toString().replace("+-", "-").replace("--", "")
 	}
 
-	// Handle the input text for calculation
+	/**
+	 * Handles the input text for calculation.
+	 *
+	 * @param input The input text.
+	 * @return The updated calculation process as a string.
+	 */
 	fun inputText(input: String): String {
 		println("[$input] Before ${getCalculateProcess()}")
 		println("[${CalculatorSymbol.PLUS_MINUS}] Before ${getCalculateProcess()}")
@@ -220,12 +252,21 @@ class CalculatorModel {
 		}
 	}
 
-	// Check if the calculation is finished
+	/**
+	 * Checks if the calculation is finished.
+	 *
+	 * @return True if the calculation is finished, false otherwise.
+	 */
 	private fun isCalculateFinished(): Boolean {
 		return getCalculateProcess().contains(CalculatorSymbol.EQUALS)
 	}
 
-	// Insert a shift number into the calculation process
+	/**
+	 * Inserts a shift number into the calculation process.
+	 *
+	 * @param input The calculator item to insert.
+	 * @return The updated calculation process as a string.
+	 */
 	fun insertShiftNumber(input: CalculatorItem): String {
 		if (!input.isNumber()) {
 			return getCalculateProcess()
@@ -251,38 +292,63 @@ class CalculatorModel {
 		return getCalculateProcess()
 	}
 
-	// Extension function: Check if a string is an integer
+	/**
+	 * Extension function to check if a string is an integer.
+	 *
+	 * @return True if the string is an integer, false otherwise.
+	 */
 	private fun String.isInteger(): Boolean {
 		return this.matches(Regex("^-?\\d+$"))
 	}
 
-	// Extension function: Check if a string is an integer with a dot
+	/**
+	 * Extension function to check if a string is an integer with a dot.
+	 *
+	 * @return True if the string is an integer with a dot, false otherwise.
+	 */
 	private fun String.isIntegerWithDot(): Boolean {
 		return this.matches(Regex("^-?\\d+\\.?$"))
 	}
 
-	// Extension function: Check if a string is a decimal
+	/**
+	 * Extension function to check if a string is a decimal.
+	 *
+	 * @return True if the string is a decimal, false otherwise.
+	 */
 	private fun String.isDecimal(): Boolean {
 		return this.matches(Regex("^-?\\d*\\.\\d+$"))
 	}
 
-	// Extension function: Check if a string is a number (including integer, decimal, and scientific notation)
+	/**
+	 * Extension function to check if a string is a number (including integer, decimal, and scientific notation).
+	 *
+	 * @return True if the string is a number, false otherwise.
+	 */
 	private fun String.isNumber(): Boolean {
 		return this.isInteger() || this.isDecimal() || this.isIntegerWithDot()
 	}
 
-	// Calculate the decimal value from a percentage string
+	/**
+	 * Calculates the decimal value from a percentage string.
+	 *
+	 * @param input The percentage string.
+	 * @return The string representation of the decimal value.
+	 */
 	private fun calculateDecimalFromPercentage(input: String): String {
 		return try {
 			val expression = Expression("$input/100")
 			val result = expression.evaluate().numberValue
-			result.toString() // Return the string representation of the decimal value
+			result.toString()
 		} catch (e: NumberFormatException) {
 			"Invalid input"
 		}
 	}
 
-	// Get the result of the calculation
+	/**
+	 * Gets the result of the calculation.
+	 *
+	 * @return The result of the calculation as a BigDecimal.
+	 */
 	private fun getCalculateResult(): BigDecimal {
 		return try {
 			val expression = Expression(getCalculateProcess().replace(CalculatorSymbol.MULTIPLY, "*").replace(CalculatorSymbol.DIVIDE, "/"))
