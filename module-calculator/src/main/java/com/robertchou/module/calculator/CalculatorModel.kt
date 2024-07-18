@@ -203,7 +203,7 @@ class CalculatorModel {
 					try {
 						val result = getCalculateResult()
 						stackCalculate.push(CalculatorItem(CalculatorSymbol.EQUALS))
-						stackCalculate.push(CalculatorItem(result.toString(), result.signum() < 0))
+						stackCalculate.push(CalculatorItem(result.toPlainString(), result.signum() < 0))
 					} catch (e: Exception) {
 						println("CalculatorSymbol.EQUALS\t$e")
 					}
@@ -283,7 +283,7 @@ class CalculatorModel {
 	}
 
 	// Get the result of the calculation
-	fun getCalculateResult(): BigDecimal {
+	private fun getCalculateResult(): BigDecimal {
 		return try {
 			val expression = Expression(getCalculateProcess().replace(CalculatorSymbol.MULTIPLY, "*").replace(CalculatorSymbol.DIVIDE, "/"))
 			expression.evaluate().numberValue
